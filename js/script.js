@@ -3,7 +3,11 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            chiave: "valore"
+            taskList: [
+                { text: "Milestone 1", done: false },
+                { text: "Milestone 2", done: false },
+                { text: "Milestone 3", done: false },
+            ]
         }
     },
     methods: {
