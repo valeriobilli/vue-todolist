@@ -12,12 +12,13 @@
     <div id="app">
         <h1>TO DO LIST ✅</h1>
 
-        <input type="text" placeholder="Aggiungi un'attività">
-        <button>Add</button>
+        <input v-model="newTask" type="text" placeholder="Aggiungi un'attività">
+        <button @click="addTask">Add</button>
 
         <ul id="taskList">
             <li v-for="(task, i) in taskList">
                 {{task}}
+                <button @click="removeTask(i)">X</button>
             </li>
             
         </ul>

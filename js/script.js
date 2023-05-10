@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            newTask: "",
             taskList: [
                 { text: "Milestone 1", done: false },
                 { text: "Milestone 2", done: false },
@@ -11,8 +12,12 @@ createApp({
         }
     },
     methods: {
-        metodo() {
-            console.log("metodo che stampa un dato: ", this.chiave);
-        }
+        addTask() {
+            this.taskList.unshift(this.newTask);
+            this.newTask.text = "";
+        },
+        removeTask(position) {
+            this.taskList.splice(position, 1)
+        },
     }
 }).mount('#app')
